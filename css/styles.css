@@ -58,7 +58,7 @@ i.fi {
 .container {
 	max-width: 1290px;
 	padding: 0 15px;
-	margin: 30px auto 0;
+	margin: 60px auto 0;
 }
 /* Main */
 .main {
@@ -69,7 +69,7 @@ i.fi {
 }
 /* Sidebar */
 .sidebar {
-	width: 320px;
+	min-width: 320px;
 	padding: 30px;
 	border: 1px solid var(--border);
 	border-radius: 20px;
@@ -201,8 +201,120 @@ ul.socials li a i.fi {
 ul.socials li a:hover i.fi {
 	scale: 1.2;
 }
+
+/* Menu */
+ul.menu {
+	padding: 10px 35px;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	font-weight: 500;
+	background: var(--surface2);
+	border-radius: 0 20px 0 20px;
+	z-index: 999;
+	gap: 40px;
+	font-size: 14px;
+	border: 1px solid var(--border);
+}
+ul.menu li a {
+	padding: 10px 0;
+	display: block;
+	transition: 0.2s;
+}
+ul.menu li a.active {
+	color: var(--primary);
+}
+ul.menu li a.active:hover {
+	opacity: 1;
+}
+ul.menu li a:hover {
+	opacity: 0.6;
+}
 /* Content */
+.content {
+	padding: 30px;
+	border: 1px solid var(--border);
+	border-radius: 20px;
+	background: var(--surface1);
+	position: relative;
+}
+.content > .name {
+	margin: 0 0 35px;
+	font-size: 32px;
+	font-weight: 600;
+	position: relative;
+	color: #fff;
+}
+.content > .name::before {
+	content: "";
+	width: 40px;
+	height: 5px;
+	background: var(--primary);
+	font-size: 32px;
+	font-weight: 600;
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	border-radius: 3px;
+	display: block;
+}
+.content p.desc {
+	margin-bottom: 16px;
+	color: #fff;
+	font-weight: 300;
+	font-size: 14px;
+}
 
-/* Resume Page */
-
-/* Portfolio Page */
+.content > .title {
+	margin: 30px 0 20px;
+	font-size: 24px;
+	font-weight: 600;
+	position: relative;
+	color: #fff;
+}
+.services {
+	display: flex;
+	align-items: start;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.services .item {
+	padding: 30px;
+	width: calc((100% - 20px) / 2);
+	border-radius: 20px;
+	background: linear-gradient(155deg, #ffda6d 0%, rgba(255, 191, 96, 0) 50%);
+	position: relative;
+	z-index: 0;
+	box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
+	display: flex;
+	align-items: start;
+	gap: 20px;
+}
+.services .item::before {
+	content: "";
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	background: linear-gradient(
+			135deg,
+			rgba(255, 218, 109, 0.0375) 0%,
+			rgba(255, 189, 94, 0) 100%
+		),
+		#1e1e1f;
+	border-radius: inherit;
+	z-index: -1;
+}
+.services .item img {
+	margin-top: 5px;
+	width: 40px;
+}
+.services .item .data .name {
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+}
